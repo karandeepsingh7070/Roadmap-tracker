@@ -1,0 +1,22 @@
+.lecture-container {
+    margin-top: 70px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.lecture-container div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+.lecture-container img {
+    position: unset;
+    width: 20px;
+    height: 20px;
+}
+.lecture-container img:hover {
+    height: 20px;
+}
