@@ -10,7 +10,7 @@ interface Lecture {
     }
 }
 const LecturePage = ({params}:Lecture) => {
-let data: SYLLABUS = syllabus[params.lectureId - 1]
+const data: SYLLABUS = syllabus[params.lectureId - 1]
   return (<>
   <Header />
   <div className='lecture-container'>

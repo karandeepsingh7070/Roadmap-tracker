@@ -13,7 +13,6 @@ import Link from 'next/link';
 const CourseSteps = () => {
 const [progress, setProgress] = useState(1);
 const [done, setIsDone] = useState(false);
-const [showCard,setShowCard] = useState(false)
 
 useEffect(() => {
     const savedProgress = getUserProgress()
@@ -26,6 +25,7 @@ const calProgressHeight = () => {
   };
 
   const calstepHeight = (isFinished: boolean | undefined) => {
+    console.log(isFinished)
     // height check for finish tag
     // if(isFinished) return '0'
     return Math.floor(syllabus.length/100);
@@ -35,8 +35,7 @@ const calProgressHeight = () => {
   const handleStepClick = (step: SYLLABUS) => {
     // const newProgress = Math.max(progress, step.id);
     // if(step.id > progress + 1) return
-    setShowCard(true)
-    let isDone = step.id == syllabus?.length - 1 || step.id == syllabus?.length
+    const isDone = step.id == syllabus?.length - 1 || step.id == syllabus?.length
     // const newProgress = step.id == syllabus?.length - 1 ? step.id + 2 : step.id == syllabus?.length ? step.id + 1 : step.id
     const newProgress = step.id == syllabus?.length ? step.id + 1 : step.id
     saveUserProgress(newProgress)
@@ -47,7 +46,7 @@ const calProgressHeight = () => {
   <div className='steps-container'>
     <Avatar progress={progress} calProgressHeight={calProgressHeight}  />
     {syllabus?.map((step, i) => {
-      let isLessonDone =  progress > i + 1 || done
+      const isLessonDone =  progress > i + 1 || done
         return <div key={step.id} className={`step-wrapper ${
           isLessonDone ? "done" : ""
         } ${progress === i + 1 ? "active" : ""}`}
