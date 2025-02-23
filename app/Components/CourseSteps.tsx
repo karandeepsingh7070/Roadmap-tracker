@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState } from 'react'
 import { SYLLABUS, syllabus } from '../utils/syllabus';
 import "../style.css"
 import { getUserProgress, saveUserProgress } from '../helper';
