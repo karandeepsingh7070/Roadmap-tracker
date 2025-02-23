@@ -8,6 +8,11 @@
   margin-top: 100px;
   margin-bottom: 5rem;
 }
+.steps-container {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;
+}
+
 
 .step-content {
   display: flex;
