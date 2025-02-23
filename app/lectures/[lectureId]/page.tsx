@@ -4,18 +4,22 @@ import React from 'react'
 import { SYLLABUS, syllabus } from '@/app/utils/syllabus';
 import BackCTA from '../BackCTA';
 
-interface Lecture {
-    params : {
-        lectureId : string
-    }
-}
-const LecturePage = ({params}:Lecture) => {
-const data: SYLLABUS = syllabus[params.lectureId - 1]
+// interface Lecture {
+//     params : {
+//         lectureId : string
+//     }
+// }
+type ParamProps = {
+  params: Promise<{ lectureId: string }>;
+};
+const LecturePage = async ({params}: ParamProps) => {
+const param = await params
+const data: SYLLABUS = syllabus[(parseInt(param?.lectureId) - 1)]
   return (<>
   <Header />
   <div className='lecture-container'>
   <BackCTA />
-  Lecture Number : {params.lectureId}
+  Lecture Number : {param?.lectureId}
     <h2>{data.title}</h2>
     <h4>{data.description}</h4>
   </div>
