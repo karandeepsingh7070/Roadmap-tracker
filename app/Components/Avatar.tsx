@@ -5,7 +5,7 @@ import femaleAvatar from "../utils/femaleAvatar.svg"
 
 interface Avatar {
   progress : number,
-  calProgressHeight: Function 
+  calProgressHeight: () => number 
 }
 const Avatar = ({progress, calProgressHeight}: Avatar) => {
 
