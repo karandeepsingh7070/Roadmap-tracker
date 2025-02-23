@@ -37,4 +37,4 @@ To start the development server, run the following command:
 npm run dev
 ```
 
-The application will be available at [Roadmap Tracker]([http://localhost:3000](https://roadmap-tracker.vercel.app/)).
+The application will be available at [Roadmap Tracker](http://localhost:3000](https://roadmap-tracker.vercel.app/)).
